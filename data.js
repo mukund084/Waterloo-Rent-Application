@@ -13,7 +13,7 @@ const data = {
             number: 4,
             address: '97 Columbia Ave'},
         {
-            number: 4,
+            number: 5,
             address: '107 Lester Ave'},
     ],
     prices: [

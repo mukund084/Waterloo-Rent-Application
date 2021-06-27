@@ -35,7 +35,7 @@ const data = {
 
         {
             number: 5,
-            rent: 1240,
+            rent: 1300,
         }
     ]
 };

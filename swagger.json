@@ -1,0 +1,305 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "UW Rent Application",
+      "version": "1.0.0"  },
+    "schemes": [
+      "http",
+      "https"  ],
+    "basePath": "/api/v1",
+    "paths": {
+      "/residences": {
+        "get": {
+          "summary": "Get all residences",
+          "description": "Retrieves the list of residences",
+          "responses": {
+            "200": {
+              "description": "The list of residences",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Residences"              }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a residence",
+          "parameters": [
+            {
+              "name": "residence",
+              "in": "body",
+              "schema": {
+                "$ref": "#/definitions/NewResidence"            }
+            }
+          ],
+          "description": "Creates a single residence",
+          "consumes": [
+            "application/json"        ],
+          "responses": {
+            "201": {
+              "description": "The newly created residence",
+              "schema": {
+                "$ref": "#/definitions/Residence"            }
+            }
+          }
+        }
+      },
+      "/residences/{number}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "number",
+              "in": "path",
+              "type": "integer",
+              "required": true          }
+          ],
+          "summary": "Get single residence",
+          "description": "Get residence by number",
+          "responses": {
+            "200": {
+              "description": "Single residence",
+              "schema": {
+                "$ref": "#/definitions/Residence"            }
+            }
+          }
+        }
+      },
+        "/residences/rooms/{rooms}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "rooms",
+                  "in": "path",
+                  "type": "integer",
+                  "required": true          }
+              ],
+              "summary": "Get residence by number of rooms",
+              "description": "Retrieves list of residences with a certain nummber of rooms",
+              "responses": {
+                "200": {
+                  "description": "The list of residences with an amount of rooms",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Residence"              }
+                  }
+                }
+              }
+            }  
+          },
+          "/residences/prices/{rent}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "rent",
+                  "in": "path",
+                  "type": "double",
+                  "required": true          }
+              ],
+              "summary": "Get residence by rent price",
+              "description": "Retrieves list of residences with a certain rent price",
+              "responses": {
+                "200": {
+                  "description": "The list of residences with a certain rent price",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Residence"              }
+                  }
+                }
+              }
+            }  
+          },
+          "/residences/bathrooms/{baths}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "baths",
+                  "in": "path",
+                  "type": "integer",
+                  "required": true          }
+              ],
+              "summary": "Get residence by number of bathrooms",
+              "description": "Retrieves list of residences with a certain number of bathrooms",
+              "responses": {
+                "200": {
+                  "description": "The list of residences with a certain number of bathrooms",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Residence"              }
+                  }
+                }
+              }
+            }  
+          },
+          "/residences/smoking/{indication}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "indication",
+                  "in": "path",
+                  "type": "string",
+                  "required": true         }
+              ],
+              "summary": "Get residence by indication of smoking or non smoking",
+              "description": "Retrieves list of residences that either allow or prohibit smoking",
+              "responses": {
+                "200": {
+                  "description": "The list of residences that allow or prohibit smoking",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Residence"              }
+                  }
+                }
+              }
+            }  
+          },
+          "/residences/{address}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "address",
+                  "in": "path",
+                  "type": "string",
+                  "required": true          }
+              ],
+              "summary": "Get residence by address",
+              "description": "Retrieves list of residences with a certain address",
+              "responses": {
+                "200": {
+                  "description": "The list of residences with a certain address",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Residence"              }
+                  }
+                }
+              }
+            }  
+          },
+          "/prices": {
+            "get": {
+              "summary": "Get all prices",
+              "description": "Retrieves the list of prices",
+              "responses": {
+                "200": {
+                  "description": "The list of prices",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Price"              }
+                  }
+                }
+              }
+            }
+            
+          },
+        "/prices/{number}": {
+          "get": {
+            "parameters": [
+              {
+                "name": "number",
+                "in": "path",
+                "type": "integer",
+                "required": true          }
+            ],
+            "summary": "Get single residence price",
+            "description": "Get price by number ",
+            "responses": {
+              "200": {
+                "description": "Single unit price",
+                "schema": {
+                  "$ref": "#/definitions/Price"            }
+              }
+            }
+          }
+        },
+      "/rooms": {
+        "get": {
+          "summary": "Get all rooms",
+          "description": "Retrieves list of rooms",
+          "responses": {
+            "200": {
+              "description": "The list of rooms",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Room"}
+              }
+            }
+          }
+        }
+      },
+      "/rooms/{number}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "number",
+              "in": "path",
+              "type": "integer",
+              "required": true          }
+          ],
+          "summary": "Get rooms for single residence",
+          "description": "Retrieves list of rooms for single residence",
+          "responses": {
+            "200": {
+              "description": "The list of rooms for single residence ",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Room"              }
+              }
+            }
+          }
+        }
+        
+      }
+      
+    },
+    "definitions": {
+      "Residence": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer"      },
+          "address": {
+            "type": "string"       },
+            "indication": {
+            "type": "string"      },
+            "baths": {
+            "type": "integer"   },
+            "rooms": {
+            "type": "integer"   }
+        }
+      },
+      "NewResidence": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"        }
+        }
+      },
+      "Price": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer"        },
+          "rent": {
+            "type": "double"        }
+        }
+      },
+      "Room": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer"        },
+          "rooms": {
+            "type": "integer"        }
+        }
+      }
+      
+    }
+  }

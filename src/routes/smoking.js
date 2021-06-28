@@ -4,8 +4,8 @@ const router = express.Router()
 
 router.get('/api/v1/smoking', (req,res)=> res.json(data.smoking));
 
-router.get('/api/v1/smoking/:id',(req,res)=>{
-    let id = parseInt(req.params.id);
+router.get('/api/v1/smoking/:number',(req,res)=>{
+    let number = parseInt(req.params.number);
     let smoking = data.smoking;
     let response = smoking.find(smoking => smoking.number === number)
     if(!response) {

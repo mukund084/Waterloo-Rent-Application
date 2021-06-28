@@ -5,8 +5,8 @@ const router = express.Router()
 
 router.get('/api/v1/bathrooms', (req,res)=> res.json(data.bathrooms));
 
-router.get('/api/v1/bathrooms/:id',(req,res)=>{
-    let id = parseInt(req.params.id);
+router.get('/api/v1/bathrooms/:number',(req,res)=>{
+    let number = parseInt(req.params.number);
     let bathrooms = data.bathrooms;
     let response = bathrooms.find(bathrooms => bathrooms.number === number)
     if(!response) {

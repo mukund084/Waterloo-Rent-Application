@@ -1,4 +1,4 @@
-const data = {
+module.exports = {
     residences: [
         {
             number: 1,
@@ -105,4 +105,3 @@ const data = {
         }
     ]
 };
-export default data; 

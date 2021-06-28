@@ -56,6 +56,7 @@ app.get('/api/v2/residences/:address',(req,res)=>{
 });
 
 app.get('/api/v1/prices', (req,res)=> res.json(data.prices));
+app.get('/api/v2/prices', (req,res)=> res.json(data.prices));
 
 app.get('/api/v1/prices/:id',(req,res)=>{
     let id = parseInt(req.params.id);
@@ -81,6 +82,7 @@ app.get('/api/v2/prices/:price',(req,res)=>{
 
 
 app.get('/api/v1/rooms', (req,res)=> res.json(data.rooms));
+app.get('/api/v2/rooms', (req,res)=> res.json(data.rooms));
 
 app.get('/api/v1/rooms/:id',(req,res)=>{
     let id = parseInt(req.params.id);
@@ -92,8 +94,19 @@ app.get('/api/v1/rooms/:id',(req,res)=>{
     res.json(response).status(200);
  
 });
+app.get('/api/v2/rooms/:rooms',(req,res)=>{
+    let rooms = parseInt(req.params.rooms);
+    let room = data.rooms;
+    let response = room.find(room => room.rooms === rooms)
+    if(!response) {
+        res.status(404).json({"message": `Residence with ID: ${rooms} doesn't exist`});
+    }
+    res.json(response).status(200);
+ 
+});
 
 app.get('/api/v1/bathrooms', (req,res)=> res.json(data.bathrooms));
+app.get('/api/v2/bathrooms', (req,res)=> res.json(data.bathrooms));
 
 app.get('/api/v1/bathrooms/:id',(req,res)=>{
     let id = parseInt(req.params.id);
@@ -118,6 +131,7 @@ app.get('/api/v2/bathrooms/:baths',(req,res)=>{
 });
 
 app.get('/api/v1/smoking', (req,res)=> res.json(data.smoking));
+app.get('/api/v2/smoking', (req,res)=> res.json(data.smoking));
 
 app.get('/api/v1/smoking/:id',(req,res)=>{
     let id = parseInt(req.params.id);

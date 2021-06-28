@@ -45,17 +45,17 @@
           }
         }
       },
-      "/residences/{number}": {
+      "/residences/{id}": {
         "get": {
           "parameters": [
             {
-              "name": "number",
+              "name": "id",
               "in": "path",
               "type": "integer",
               "required": true          }
           ],
           "summary": "Get single residence",
-          "description": "Get residence by number",
+          "description": "Get residence by id",
           "responses": {
             "200": {
               "description": "Single residence",
@@ -197,17 +197,17 @@
             }
             
           },
-        "/prices/{number}": {
+        "/prices/{id}": {
           "get": {
             "parameters": [
               {
-                "name": "number",
+                "name": "id",
                 "in": "path",
                 "type": "integer",
                 "required": true          }
             ],
             "summary": "Get single residence price",
-            "description": "Get price by number ",
+            "description": "Get price by id ",
             "responses": {
               "200": {
                 "description": "Single unit price",
@@ -233,11 +233,11 @@
           }
         }
       },
-      "/rooms/{number}": {
+      "/rooms/{id}": {
         "get": {
           "parameters": [
             {
-              "name": "number",
+              "name": "id",
               "in": "path",
               "type": "integer",
               "required": true          }
@@ -263,7 +263,7 @@
       "Residence": {
         "type": "object",
         "properties": {
-          "number": {
+          "id": {
             "type": "integer"      },
           "address": {
             "type": "string"       },
@@ -285,7 +285,7 @@
       "Price": {
         "type": "object",
         "properties": {
-          "number": {
+          "id": {
             "type": "integer"        },
           "rent": {
             "type": "double"        }
@@ -294,7 +294,7 @@
       "Room": {
         "type": "object",
         "properties": {
-          "number": {
+          "id": {
             "type": "integer"        },
           "rooms": {
             "type": "integer"        }

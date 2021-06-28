@@ -1,5 +1,5 @@
 {
-  "name": "uw-rent-app-restapi",
+  "name": "uw-rent-app",
   "version": "1.0.0",
   "main": "index.js",
   "module": "main.js",

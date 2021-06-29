@@ -7,7 +7,7 @@ function App(props) {
       <>
       <h1> {props.name} </h1>
         <img src="/images/homepage-image.jpg.jpg" alt="" />
-    <ResidencesList />
+      <ResidencesList />
     </>
     </div>
   );

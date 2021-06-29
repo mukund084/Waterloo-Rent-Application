@@ -8,20 +8,20 @@ export default class ResidencesList extends Component {
     }
     componentDidMount() {
         fetch(
-            '/http://localhost:3001/api/v1/residences'
+            'http://localhost:3001/api/v1/residences'
         )
         .then((response) => response.json())
         .then((result) => this.setState({ residences: result }));
     }
 
     renderResidences() {
-        return this.state.residences.map((residence) => <div>{residence.address}</div>)
+        return this.state.residences.map((residence) => <div>{residence.address}</div>);
     }
 
     render () {
         return (
         <>
-        <h2> Residences List</h2>
+        <h2> Residences List </h2>
         {this.renderResidences()}
         </>
         );

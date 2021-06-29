@@ -8,7 +8,7 @@ export default class ResidencesList extends Component {
     }
     componentDidMount() {
         fetch(
-            'http://localhost:3001/api/v1/residences'
+            'https://uw-rent-rest.herokuapp.com/api/v1/residences'
         )
         .then((response) => response.json())
         .then((result) => this.setState({ residences: result }));

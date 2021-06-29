@@ -7,7 +7,7 @@ import smoking from "./routes/smoking";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
 import data from '../data';
-import cors from '../cors'
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 3001;

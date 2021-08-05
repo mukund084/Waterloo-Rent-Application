@@ -2,13 +2,12 @@ import express from 'express';
 import data from '../../data';
 const router = express.Router()
 
+router.get('/api/v1/early_stage', (req,res)=> res.json(data.early_stage));
 
-router.get('/api/v1/bathrooms', (req,res)=> res.json(data.bathrooms));
-
-router.get('/api/v1/bathrooms/:id',(req,res)=>{
+router.get('/api/v1/early_stage/:id',(req,res)=>{
     let id = parseInt(req.params.id);
-    let bathrooms = data.bathrooms;
-    let response = bathrooms.find(bathrooms => bathrooms.id === id)
+    let early_stage = data.early_stage;
+    let response = early_stage.find(early_stage => early_stage.id === id)
     if(!response) {
         res.status(404).json({"message": `Residence with ID: ${id} doesn't exist`});
     }

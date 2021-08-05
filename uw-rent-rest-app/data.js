@@ -1,5 +1,5 @@
 const data = {
-    residences: [
+    getting_started: [
         {
             id: 1,
             address: '100 King Street'},
@@ -16,7 +16,7 @@ const data = {
             id: 5,
             address: '107 Lester Ave'},
     ],
-    prices: [
+    early_stage: [
         {
             id: 1,
             rent: 500, },
@@ -38,7 +38,7 @@ const data = {
             rent: 1300,
         }
     ],
-    rooms: [
+    build_test: [
         {
             id: 1,
             rooms: 4, },
@@ -60,7 +60,7 @@ const data = {
             rooms: 5,
         }
     ],
-    smoking: [
+    funding_competition: [
         {
             id: 1,
             indication: "no", },
@@ -82,7 +82,7 @@ const data = {
             indication: "no",
         }
     ],
-    bathrooms: [
+    starting_launch: [
         {
             id: 1,
             baths: 2, },
